@@ -25,18 +25,19 @@ TruthTracer Pro is a **containerized demo application** that combines a FastAPI 
 
 csharp
 Copy code
-            ┌─────────────────┐
-            │   React (UI)    │
-            │   served by     │
-Browser ───────►│ Nginx │
-└───────┬─────────┘
-│ /api/*
-▼
-┌─────────────────┐
-│ FastAPI (API) │
-│ Hugging Face │
-│ model backend │
-└─────────────────┘
+                ┌─────────────────┐
+                │   React (UI)    │
+                │   served by     │
+Browser ───────►│   Nginx         │
+                └───────┬─────────┘
+                        │  /api/*
+                        ▼
+                ┌─────────────────┐
+                │  FastAPI (API)  │
+                │  Hugging Face   │
+                │  model backend  │
+                └─────────────────┘
+
 
 markdown
 Copy code
