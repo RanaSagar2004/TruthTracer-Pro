@@ -1,0 +1,104 @@
+/* Basic, clean styling for the TruthTracer UI (no deps) */
+
+:root{
+  --bg:#f9fafb;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --accent:#111827;
+  --primary:#0f172a;
+  --radius:12px;
+  --shadow: 0 6px 16px rgba(17,24,39,0.06);
+}
+
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;background:var(--bg);color:var(--accent);}
+
+.app-header{
+  padding:28px 24px 8px 24px;
+}
+.app-header h1{margin:0;font-size:28px}
+.header-sub{color:var(--muted);margin-top:6px;font-size:13px}
+
+.container{
+  display:flex;
+  gap:20px;
+  padding:20px;
+  max-width:1200px;
+  margin:0 auto 40px;
+}
+
+/* left / right columns */
+.left-panel{flex:1;max-width:460px}
+.right-panel{flex:2;min-width:420px}
+
+.label{font-weight:600;color:#111827;margin-bottom:8px;display:block}
+.input{
+  width:100%;
+  height:160px;
+  padding:12px;
+  border-radius:10px;
+  border:1px solid #e6e9ee;
+  resize:vertical;
+  font-size:14px;
+  background:#fff;
+}
+
+.controls{display:flex;gap:10px;margin-top:12px}
+.btn{
+  padding:8px 12px;border-radius:10px;border:1px solid #e6e9ee;background:#fff;cursor:pointer;font-weight:600;
+}
+.btn.primary{
+  background:#0f172a;color:#fff;border:1px solid rgba(0,0,0,0.08)
+}
+.btn:disabled{opacity:0.6;cursor:not-allowed}
+
+.error-box{
+  margin-top:12px;padding:10px;border-radius:8px;background:#fff0f0;color:#7f1d1d;border:1px solid #f5c2c2;
+}
+
+.notes{margin-top:14px;color:var(--muted);font-size:13px}
+
+/* Result card */
+.result-card{
+  background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:var(--shadow);
+}
+.result-header{display:flex;justify-content:space-between;gap:18px;align-items:flex-start}
+.claim-title{font-size:12px;color:var(--muted);font-weight:700}
+.claim-text{font-size:16px;margin-top:6px;color:#0b1220}
+
+.verdict-area{text-align:right;min-width:200px}
+.verdict-badge{
+  display:inline-block;padding:8px 12px;border-radius:999px;color:#fff;font-weight:700;margin-bottom:10px;
+  font-size:13px;
+}
+.confidence{display:flex;align-items:center;gap:10px;justify-content:flex-end}
+.confidence-label{font-size:12px;color:var(--muted)}
+.confidence-bar{width:130px;height:10px;background:#eef2f7;border-radius:999px;overflow:hidden;border:1px solid #eef2f7}
+.confidence-fill{height:100%;background:linear-gradient(90deg,#60a5fa,#3b82f6)}
+.confidence-num{font-weight:700;font-size:13px;color:var(--muted)}
+
+.summary{margin-top:12px;color:#111827;font-size:14px;padding-bottom:10px;border-bottom:1px dashed #eef2f7}
+
+/* Sources */
+.section{margin-top:16px}
+.sources-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:10px}
+.source-card{background:#fbfdff;border:1px solid #eef2f7;padding:12px;border-radius:10px}
+.source-title{font-weight:700;font-size:14px}
+.source-meta{font-size:12px;color:var(--muted);margin-top:6px;display:flex;gap:6px}
+.source-snippet{margin-top:8px;font-size:13px;color:#374151}
+.source-actions{margin-top:10px}
+.source-actions a{color:#2563eb;font-weight:600;text-decoration:none}
+
+/* Timeline & provenance */
+.two-columns{display:flex;gap:16px;margin-top:16px;flex-wrap:wrap}
+.timeline-list{margin:0;padding-left:18px}
+.tl-date{font-weight:700;color:#374151}
+.prov-list{margin:0;padding-left:18px}
+.prov-quote{font-style:italic;color:#0b1220}
+.prov-meta{font-size:12px;color:var(--muted);margin-top:6px}
+
+/* misc */
+.empty-state{background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow)}
+.notes-box{margin-top:12px;padding:10px;background:#f8fafc;border-radius:10px;color:var(--muted);font-size:13px}
+
+.footer{text-align:center;padding:18px;color:var(--muted);font-size:13px;border-top:1px solid #f1f5f9}
